@@ -1,0 +1,1 @@
+web: java -jar target/HelloDevOps-01-AM.jar
