@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd
-http://maven.apache.org/POM/4.0.0 ">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.moussa</groupId>
     <artifactId>com.moussa.HelloDevOps</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -19,12 +19,13 @@ http://maven.apache.org/POM/4.0.0 ">
         <profile>
             <activation>
                 <property>
-                    <name>!env.PRODUCTION</name>
+                    <name>!env.HEROKUBUILD</name>
                 </property>
             </activation>
             <id>local</id>
             <build>
                 <plugins>
+                    <!--npm build -->
                     <!-- NPM build -->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
@@ -83,7 +84,6 @@ http://maven.apache.org/POM/4.0.0 ">
         </profile>
     </profiles>
 
-
     <dependencies>
         <!--Embedded Tomcat-->
         <dependency>
@@ -97,6 +97,8 @@ http://maven.apache.org/POM/4.0.0 ">
             <artifactId>tomcat-embed-jasper</artifactId>
             <version>${tomcat.version}</version>
         </dependency>
+
+        <!-- Rest Spec -->
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
@@ -132,7 +134,6 @@ http://maven.apache.org/POM/4.0.0 ">
             <artifactId>activation</artifactId>
             <version>1.1</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -165,5 +166,4 @@ http://maven.apache.org/POM/4.0.0 ">
             </plugin>
         </plugins>
     </build>
-
 </project>
