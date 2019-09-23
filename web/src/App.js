@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import {Button, Form, Row, Container, Col} from 'react-bootstrap';
 import {HashRouter, Route, Switch} from 'react-router-dom';
+import {observer} from 'mobx-react';
 
 import PenguinStore from "./stores/PenguinStore";
 import './App.css';
@@ -36,7 +37,7 @@ function App() {
                           <Form.Group controlId="formBasicEmail">
                           <Form.Control type="email" placeholder="Enter penguin name here" />
                           </Form.Group>
-                          <Button variant="primary">Enter</Button>
+                          <Button variant="primary" onClick={()=>penguinStore.penguins.push("Drix")}>Add penguin</Button>
                       </Col>
                       <Col><ul>
                           {penguinStore.penguins.map((penguinName,key)=>
@@ -63,4 +64,4 @@ const About = ({match})=> {
     </div>
 }
 
-export default App;
+export default observer(App);
