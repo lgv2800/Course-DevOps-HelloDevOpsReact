@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {Button, Form, Row, Container, Col} from 'react-bootstrap';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 
-//import GiraffeStore from "./stores/GiraffeStore";
+import PenguinStore from "./stores/PenguinStore";
 import './App.css';
 
-//const giraffeStore = new GiraffeStore();
+const penguinStore = new PenguinStore();
 
 function App() {
   return (
@@ -31,12 +31,22 @@ function App() {
           <Container>
               <div>
                   <Row>
-                      <Col xs={6}><Form.Group controlId="formBasicEmail">
-                          <Form.Control type="email" placeholder="Enter name here" />
-                      </Form.Group></Col>
-                      <Col xs={6}><Button variant="primary">Enter</Button></Col>
+                      <Col xs={6}>
+                          <p>Penguins</p>
+                          <Form.Group controlId="formBasicEmail">
+                          <Form.Control type="email" placeholder="Enter penguin name here" />
+                          </Form.Group>
+                          <Button variant="primary">Enter</Button>
+                      </Col>
+                      <Col><ul>
+                          {penguinStore.penguins.map((penguinName,key)=>
+                              <li key={key}>{penguinName}</li>
+                          )}
+                      </ul></Col>
                   </Row>
+                  <Row>
 
+                  </Row>
               </div>
       </Container>
         </body>
