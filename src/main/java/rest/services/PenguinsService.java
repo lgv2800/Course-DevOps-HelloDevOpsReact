@@ -8,11 +8,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
-@Path("giraffes")
-public class GiraffeService {
-    List<String> giraffes = Arrays.asList("Melman", "Elmer");
+@Path("penguins")
+public class PenguinsService {
+    List<String> penguins = Arrays.asList("Ozzie", "Zinger", "Dolo", "Pablo");
     @GET
-    public List<String> getGiraffes(){
-        return giraffes;
+    public List<String> getPenguins(){
+        return penguins;
     }
 }

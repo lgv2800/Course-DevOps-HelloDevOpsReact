@@ -11,7 +11,7 @@ export default class PenguinStore {
     }
 
     fetchPenguins (){
-        fetch(baseUrl + "rest/giraffes").then(
+        fetch(baseUrl + "rest/penguins").then(
             (response)=> response.json().then(
                 (json)=> this.penguins = json
             )
